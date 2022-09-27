@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+}
+
+.flex-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 15rem;
+}
+
+.grid {
+  display: flex;
+  width: 600px;
+  height: 600px;
+  flex-flow: row wrap;
+  margin: 0 auto;
+}
+
+.square {
+  width: 200px;
+  height: 200px;
+  border: 1px solid #808080;
+}
