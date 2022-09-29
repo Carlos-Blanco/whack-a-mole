@@ -1,13 +1,31 @@
-const square = document.querySelectorAll('.sqaure');
+const square = document.querySelectorAll('.square');
 const mole = document.querySelectorAll('.mole');
 const timeleft = document.querySelector('#timeLeft');
 let score = document.querySelector('#score');
 
 let result = 0;
 
-function ramdomSquare() {
+function randomSquare() {
   square.forEach( className  => {
-    className.classList.remove('.mole');
+    className.classList.remove('mole');
   });
-  let ramdomposition = square[Math.floor(Math.ramdom()*9)]
+  let randomPosition = square[Math.floor(Math.random() * 9)]
+  randomPosition.classList.add('mole');
+  hitPosition = randomPosition.id;
 }
+
+square.forEach(id => {
+  id.addEventListener('mouseup', () => {
+    if(id.id === hitPosition) {
+      result = result + 1;
+      score.textContent = result;
+    }
+  })
+})
+
+function moveMole() {
+  let timerId = null;
+  timerId = setInterval(randomSquare, 1000);
+}
+
+moveMole();
