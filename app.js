@@ -20,6 +20,7 @@ square.forEach(id => {
     if(id.id === hitPosition) {
       result++;
       score.textContent = result;
+      hitPosition = null
     }
   })
 })
